@@ -17,25 +17,23 @@
 package com.balysv.materialmenu;
 
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.Paint.Style;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
+import android.util.Property;
 import android.util.TypedValue;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
-
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.animation.AnimatorListenerAdapter;
-import com.nineoldandroids.animation.ObjectAnimator;
-import com.nineoldandroids.util.Property;
-
-import static android.graphics.Paint.Style;
 
 
 public class MaterialMenuDrawable extends Drawable implements Animatable {
@@ -699,7 +697,7 @@ public class MaterialMenuDrawable extends Drawable implements Animatable {
     /*
      * Animations
      */
-    private Property<MaterialMenuDrawable, Float> transformationProperty
+    private final Property<MaterialMenuDrawable, Float> transformationProperty
         = new Property<MaterialMenuDrawable, Float>(Float.class, "transformation") {
         @Override
         public Float get(MaterialMenuDrawable object) {
@@ -712,7 +710,7 @@ public class MaterialMenuDrawable extends Drawable implements Animatable {
         }
     };
 
-    private Property<MaterialMenuDrawable, Float> pressedProgressProperty
+    private final Property<MaterialMenuDrawable, Float> pressedProgressProperty
         = new Property<MaterialMenuDrawable, Float>(Float.class, "pressedProgress") {
         @Override
         public Float get(MaterialMenuDrawable object) {
