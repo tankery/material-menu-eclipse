@@ -1,2 +1,17 @@
-/build
-*.iml
+# Java files
+bin
+gen
+
+# NDK files
+libs/*/
+obj
+
+# eclipse project files
+.project
+.cproject
+.classpath
+.settings/
+
+# Annotaion Process
+.apt_generated/
+
